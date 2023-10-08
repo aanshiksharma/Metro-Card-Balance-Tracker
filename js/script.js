@@ -89,7 +89,7 @@ function deleteData() {}
 function editData() {}
 
 function showData() {
-  let data = JSON.parse(localStorage.getItem("Metro Card Data"));
+  let data = JSON.parse(localStorage.getItem("Metro Card Data") || "[]");
   tableBody[0].innerHTML = "";
   let i = 0;
   while (i < data.length && i < 5) {
