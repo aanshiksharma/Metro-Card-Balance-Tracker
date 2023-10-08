@@ -116,6 +116,7 @@ function showData() {
     i++;
   }
 
+  tableBody[1].innerHTML = "";
   data.forEach((obj) => {
     const tr = document.createElement("tr");
     const td1 = document.createElement("td");
