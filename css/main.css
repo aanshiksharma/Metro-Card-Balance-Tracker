@@ -1,0 +1,351 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --clr-primary-1: #ffffff;
+  --clr-primary-2: #d1d2d3;
+  --clr-secondary: #afb1b2;
+  --clr-tertiary: #8b949b;
+  --clr-background: #1b2023;
+  --clr-accent-1: #272b2e;
+  --clr-accent-2: #323739;
+  --clr-accent-3: #3d4144;
+  --clr-accent-4: #005664;
+  --clr-hover: #00000026;
+  --clr-recharge: #00ff00;
+  --clr-expense: #ff0000;
+}
+
+body {
+  color: white;
+  background: var(--clr-background);
+  font-family: Inter, sans-serif;
+  height: 100vh;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  background: var(--clr-accent-1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.header .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 1em;
+}
+.header .wrapper .logo {
+  font-size: 1.5rem;
+  padding-block: 0.5em;
+}
+.header .wrapper .navbarToggler {
+  display: none;
+  color: var(--clr-primary-2);
+  font-size: 2rem;
+}
+.header .wrapper .primary-navigation {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  list-style: none;
+}
+.header .wrapper .primary-navigation .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  padding: 1em;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  color: white;
+}
+.header .wrapper .primary-navigation .btn:hover {
+  background: var(--clr-accent-2);
+}
+.header .wrapper .primary-navigation .btn.active {
+  background: var(--clr-accent-4);
+}
+
+main .dashboard .graph-container {
+  min-height: 17rem;
+  background: var(--clr-accent-3);
+  padding: 1.5em;
+}
+main .dashboard .dashboard-bottom {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1em;
+  margin-block: 1.5em;
+  padding-inline: 1em;
+}
+main .dashboard .dashboard-bottom .table-container {
+  flex-basis: 58%;
+  flex-grow: 1;
+}
+main .dashboard .dashboard-bottom .buttons-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 1em;
+  flex-basis: 40%;
+  flex-grow: 1;
+}
+main .dashboard .dashboard-bottom .buttons-container .btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  flex-basis: 10rem;
+  flex-grow: 1;
+  border-radius: 10px;
+  padding: 2em;
+  color: var(--clr-primary-1);
+  text-decoration: none;
+  font-size: 1rem;
+  background: var(--clr-accent-4);
+  transition: 100ms ease-out;
+}
+main .dashboard .dashboard-bottom .buttons-container .btn .bi {
+  font-size: 3rem;
+}
+main .dashboard .dashboard-bottom .buttons-container .btn:hover {
+  scale: 1.02;
+}
+main .manage-transactions-section {
+  margin-block: 1em;
+}
+main .manage-transactions-section .table-container {
+  padding-inline: 1em;
+}
+main .table-container {
+  overflow: auto;
+}
+main .table-container table {
+  width: 100%;
+  border-spacing: 0 0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+main .table-container table tr th,
+main .table-container table tr td {
+  padding-inline: 1em;
+  padding-block: 0.7em;
+  border-right: 1px solid var(--clr-primary-2);
+}
+main .table-container table tr th:nth-child(1),
+main .table-container table tr td:nth-child(1) {
+  max-width: 12rem;
+}
+main .table-container table tr th:last-child,
+main .table-container table tr td:last-child {
+  border-right: 0;
+}
+main .table-container table tr th {
+  border-bottom: 1px solid var(--clr-primary-2);
+}
+main .table-container table tr td {
+  text-align: right;
+  font-weight: 600;
+}
+main .table-container table tr td:first-child {
+  text-align: center;
+}
+main .table-container table thead {
+  background: var(--clr-accent-1);
+  font-size: 1rem;
+}
+main .table-container table tbody tr:nth-of-type(2n + 1) {
+  background: var(--clr-accent-2);
+}
+main .table-container table tbody tr:nth-of-type(2n) {
+  background: var(--clr-accent-3);
+}
+main .dialog-box-container {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.2745098039);
+  backdrop-filter: blur(2px);
+}
+main .dialog-box-container .dialog-box {
+  display: grid;
+  gap: 1em;
+  background: var(--clr-background);
+  padding: 1em;
+  border-radius: 10px;
+  width: clamp(280px, 100%, 25rem);
+  margin-inline: 1em;
+}
+main .dialog-box-container .dialog-box header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 0.2em;
+  margin-block: 1em;
+}
+main .dialog-box-container .dialog-box header h3 {
+  font-size: 1.5rem;
+  color: var(--clr-primary-2);
+}
+main .dialog-box-container .dialog-box header .btn {
+  font-size: 1.8rem;
+  border-radius: 4px;
+  color: var(--clr-primary-2);
+  transition: 100ms ease;
+}
+main .dialog-box-container .dialog-box header .btn:hover {
+  background: var(--clr-hover);
+}
+main .dialog-box-container .form {
+  width: 100%;
+  display: grid;
+  gap: 1.5em;
+}
+main .dialog-box-container .form fieldset {
+  outline: 0;
+  border: 0;
+  position: relative;
+}
+main .dialog-box-container .form fieldset input {
+  background: transparent;
+  width: 100%;
+  padding: 1em 0.2em;
+  font-size: 1rem;
+  border: 0;
+  outline: 0;
+  border-bottom: 2px solid var(--clr-accent-3);
+  color: var(--clr-primary-1);
+}
+main .dialog-box-container .form fieldset input:focus {
+  border-color: var(--clr-accent-4);
+}
+main .dialog-box-container .form fieldset input::placeholder {
+  opacity: 0;
+}
+main .dialog-box-container .form fieldset input:placeholder-shown ~ label {
+  top: 1em;
+  left: 0.2em;
+  opacity: 0.5;
+}
+main .dialog-box-container .form fieldset:not(.radio-fieldset) label {
+  position: absolute;
+  top: -0.5em;
+  left: 0;
+  font-size: 1rem;
+  display: block;
+  transition: 200ms ease-out;
+}
+main .dialog-box-container .form fieldset.radio-fieldset {
+  padding: 1em 0.5em;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+main .dialog-box-container .form fieldset.radio-fieldset .input-container {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+main .dialog-box-container .form fieldset.radio-fieldset input {
+  content: "";
+  appearance: none;
+  outline: 2px solid white;
+  outline-offset: 3px;
+  width: 0.5em;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+main .dialog-box-container .form fieldset.radio-fieldset input:checked {
+  background: var(--clr-accent-4);
+}
+main .dialog-box-container .form fieldset.radio-fieldset label {
+  cursor: pointer;
+}
+main .dialog-box-container .form fieldset .btn {
+  color: var(--clr-primary-1);
+  background: var(--clr-accent-2);
+  padding: 0.7em 2em;
+  border-radius: 7px;
+}
+main .dialog-box-container .form fieldset:last-child {
+  justify-self: end;
+}
+
+.wrapper {
+  max-width: 1440px;
+  margin-inline: auto;
+}
+
+.wrapper-table {
+  max-width: 108ch;
+  margin-inline: auto;
+}
+
+.btn {
+  background: transparent;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.navbar-visible {
+  transform: translateX(0) !important;
+}
+
+.bi {
+  width: 1em;
+  height: 1em;
+}
+.bi::before {
+  display: block;
+}
+
+@media screen and (max-width: 700px) {
+  .header .navbarToggler {
+    display: block !important;
+  }
+  .header .navbarToggler#hideNavbar {
+    position: absolute;
+    top: 0.8em;
+    right: 0.8em;
+    font-size: 1.5rem;
+  }
+  .header .navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: var(--clr-background);
+    width: 100%;
+    height: 100%;
+    padding-block: 4em;
+    padding-inline: 1em;
+    transform: translateX(100%);
+    transition: transform 500ms ease-out;
+  }
+  .header .navbar .primary-navigation {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .header .navbar .primary-navigation .btn {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
